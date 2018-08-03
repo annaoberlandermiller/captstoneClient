@@ -1,0 +1,57 @@
+<div *ngIf="PR">
+  <br>
+  <h3 >Details for Purchase Request #{{PR.Id}}</h3>
+  <br>
+      <a routerLink="/pr/list">Return to Purchase Request List</a> |
+       <a routerLink="/pr/edit/{{PR.Id}}">Edit Purchase Request #{{PR.Id}}</a> 
+  <br>
+  <br>
+  
+  <table class="form-group" *ngIf="PR">  <!--this says don't render the table until you get the data back -->
+    
+    <tr>
+      <th>Id:</th>
+      <td>{{PR.Id}}</td>
+    </tr>
+  
+    <tr>
+        <th>Requester:</th>
+        <td>{{PR.User.Username}}</td>
+    </tr>
+ 
+    <tr>
+        <th>Request Description:</th>
+        <td>{{PR.RequestDescription}}</td>
+      </tr>
+
+      <tr>
+        <th>Request Justification:</th>
+        <td>{{PR.RequestJustification}}</td>
+      </tr>
+
+      <tr>
+          <th>Total:</th>
+          <td>{{PR.Total}}</td>
+      </tr>
+
+      <tr>
+            <th>Delivery Mode:</th>
+            <td>{{PR.DeliveryMode}}</td>
+        </tr>
+
+      <tr>
+          <th>Status:</th>
+          <td>{{PR.Status}}</td>
+      </tr>
+
+  <tr>
+    <th>Active:</th>
+    <td>{{PR.Active? 'Yes' : 'No'}}</td>
+  </tr>
+      
+    
+  </table>
+  <br> <span>
+  <button class="btn btn-primary" (click)="markForReview()">Submit purchase request #{{PR.Id}} for review</button>
+</span>
+  </div>

@@ -1,0 +1,56 @@
+<div *ngIf="User">
+<br>
+<h3 >Details for user {{User.Username}}</h3>
+<br>
+    <a routerLink="/user/list">Return to User List</a> |
+     <a routerLink="/user/edit/{{User.Id}}">Edit {{User.Username}}'s Information</a> | 
+     <a routerLink="/user/remove/{User.Id}}">Remove {{User.Username}}</a>
+<br>
+<br>
+
+<table class="form-group" *ngIf="User">  <!--this says don't render the table until you get the data back -->
+  
+  <tr>
+    <th>Id:</th>
+    <td>{{User.Id}}</td>
+  </tr>
+
+  <tr>
+      <th>Username:</th>
+      <td>{{User.Username}}</td>
+  </tr>
+
+  <tr>
+      <th>Password:</th>
+      <td>{{User.Password}}</td>
+    </tr>
+  
+  <tr>
+      <th>Name:</th>
+      <td>{{User.FirstName}} {{User.LastName}}</td>
+    </tr>
+    <tr>
+        <th>Phone:</th>
+        <td>{{User.Phone}}</td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td>{{User.Email}}</td>
+  </tr>
+  <tr>
+    <th>Reviewer:</th>
+    <td>{{User.Reviewer? 'Yes' : 'No'}}</td>
+</tr>
+<tr>
+  <th>Admin:</th>
+  <td>{{User.Admin? 'Yes' : 'No'}}</td>
+</tr>
+<tr>
+  <th>Active:</th>
+  <td>{{User.Active? 'Yes' : 'No'}}</td>
+</tr>
+    
+  
+</table>
+
+</div>

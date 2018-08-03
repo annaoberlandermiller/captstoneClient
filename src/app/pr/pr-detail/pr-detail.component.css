@@ -1,0 +1,13 @@
+table {
+    margin: 0px auto;
+}
+
+th, td {
+    padding: 10px;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

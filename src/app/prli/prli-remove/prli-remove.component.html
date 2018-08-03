@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+<body *ngIf="PRLI">
+    <a routerLink="/pr/lines/{{PRLI.PurchaseRequestId}}">Return to Purchase Request #{{PRLI.PurchaseRequestId}} Line Items</a>
+<br>
+<br>
+<h3>Remove line item #{{PRLI.Id}}</h3>
+
+<table class="table table-sm">
+ <tr>
+   <th>Product:</th>
+   <td>{{PRLI.Product.Name}}</td>
+  </tr>
+ <tr>
+    <th>Quantity:</th>
+    <td>{{PRLI.Quantity}}</td>
+ </tr>
+
+  </table>
+  <span>
+  <button class="btn btn-danger" (click)="remove()">Remove line item #{{PRLI.Id}}</button>
+</span>
+</body> 

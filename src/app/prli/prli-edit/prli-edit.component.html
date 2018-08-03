@@ -1,0 +1,34 @@
+<br>
+<br>
+<br>
+<body *ngIf="PRLI">
+<a routerLink="/pr/list">Return to Purchase Request List</a>
+<br>
+<br>
+<h3>Edit line item #{{PRLI.Id}}</h3>
+
+<table class="table table-sm">
+ <tr>
+   <th>Product:</th>
+   <td>  
+     <select id="ProductId"
+    [(ngModel)]="PRLI.ProductId"
+    name="ProductId"
+    class="form-control"
+    required>
+    <option *ngFor="let p of Products" [ngValue]="p.Id">{{p.Name}}</option>
+  </select>
+</td>
+  </tr>
+ <tr>
+    <th>Quantity:</th>
+    <td>
+    <input [(ngModel)]="PRLI.Quantity" name="Quantity" id="PRLIQuantity"type="number" placeholder="Quantity here" >
+  </td>
+ </tr>
+
+  </table>
+  <span>
+  <button class="btn btn-primary" (click)="change()">Edit line item #{{PRLI.Id}}</button>
+</span>
+</body> 

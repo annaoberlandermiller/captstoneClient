@@ -1,0 +1,72 @@
+<br>
+<br>
+<br>
+<body *ngIf="PR">
+<h3>Line Items for Purchase Request #{{PR.Id}}</h3>
+<br>
+<a routerLink="/pr/list">Return to Purchase Request List</a> |
+<a routerLink="/pr/edit/{{PR.Id}}">Edit Purchase Request #{{PR.Id}}</a> 
+<br>
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+<th>Id</th>
+<th>Requester</th>
+<th>Request Description</th>
+<th>Request Justification</th>
+<th>Total</th>
+<th>Status</th>
+<th>Delivery Mode</th>
+<th>Active</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngIf="PR">
+      <td>{{PR.Id}}</td>
+      <td>{{PR.User.Username}}</td>
+      <td>{{PR.RequestDescription}}</td>
+      <td>{{PR.RequestJustification}}</td>
+      <td class="bold">{{PR.Total | currency}}</td>
+      <td>{{PR.Status}}</td>
+      <td>{{PR.DeliveryMode}}</td>
+      <td>{{PR.Active? 'Yes' : 'No' }}</td>
+     
+    </tr>
+  </tbody>
+</table>
+<br>
+<a routerLink="/prli/create/{{PR.Id}}">Add Line Items to Purchase Request #{{PR.Id}}</a>
+<br>
+
+<table class="table table-sm">
+    <thead class="thead-light">
+    <th>Id</th>
+    <th>Product</th>
+    <th>Unit</th>
+    <th>Price Per Unit</th>
+    <th>Quantity</th>
+    <th>Line Item Total</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of PR.PurchaseRequestLineItems">
+    <td>{{p.Id}}</td>
+    <td>{{p.Product.Name}}</td>
+    <td>{{p.Product.Unit}}</td>
+    <td>{{p.Product.Price | currency }}</td>
+    <td>{{p.Quantity}}</td>
+    <td class="bold">{{p.Quantity * p.Product.Price | currency }}</td>
+    <td>
+        <a routerLink="/prli/edit/{{p.Id}}">Edit</a> | 
+        <a routerLink="/prli/remove/{{p.Id}}">Remove</a>
+    </td>
+</tr>
+
+</tbody>
+</table>
+<br>
+<br>
+
+</body>

@@ -1,0 +1,122 @@
+<body> 
+
+    <br>
+    <h3>Edit Vendor:</h3>
+    <br>
+    <a routerLink="/vendor/list">Return to Vendor List</a> | 
+    <a routerLink="/vendor/detail/{{vendor.Id}}">View {{vendor.Name}}'s Detail Page</a> | 
+    <a routerLink="/vendor/remove/{{vendor.Id}}">Remove {{vendor.Name}}</a>
+    <br>
+    <br>
+    <table>
+        <tr class="form-group">
+            <th>Code:</th>
+            <td>
+              <input type="text"
+              id="Code" 
+              [(ngModel)]="vendor.Code" 
+              placeholder="Code here"
+              class="form-control">
+            </td>
+          </tr>
+      <tr class="form-group">
+        <th>Name:</th>
+        <td>
+          <input type="text" 
+          id="Name"
+          [(ngModel)]="vendor.Name"
+          placeholder="Name here"
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+        <th>Address:</th>
+        <td>
+          <input type="text" 
+          id="Address"
+          [(ngModel)]="vendor.Address"
+          placeholder="Address here"
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+        <th>City:</th>
+        <td>
+          <input type="text" 
+          id="City"
+          [(ngModel)]="vendor.City" 
+          placeholder="City here"
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+          <th>State:</th>
+          <td>
+            <input type="text" 
+            id="State"
+            [(ngModel)]="vendor.State" 
+            placeholder="State here"
+            class="form-control">
+          </td>
+        </tr>
+        <tr class="form-group">
+            <th>Zip Code:</th>
+            <td>
+              <input type="text" 
+              id="Zip"
+              [(ngModel)]="vendor.Zip" 
+              placeholder="Zip here"
+              class="form-control">
+            </td>
+          </tr>
+      <tr class="form-group">
+        <th>Phone:</th>
+        <td>
+          <input type="text" 
+          id="Phone"
+          [(ngModel)]="vendor.Phone"
+          placeholder="Phone here"
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+        <th>Email:</th>
+        <td>
+          <input type="text" 
+          id="Email"
+          [(ngModel)]="vendor.Email" 
+          placeholder="Email here"
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+        <th>Preapproved:</th>
+        <td>
+          <select id="Preapproved"
+          [(ngModel)]="vendor.Preapproved"
+          class="form-control"
+          required>
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+        </td>
+      </tr>
+    
+      <tr class="form-group">
+        <th>Active:</th>
+        <td>
+        <select id="Active"
+          [(ngModel)]="vendor.Active"
+          class="form-control"
+          required>
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+        </td>
+      </tr>
+    </table>
+    <br>
+   <span>
+    <button class="btn btn-primary" (click)="change()">Submit changes to {{vendor.Name}}</button>
+</span>
+    </body>

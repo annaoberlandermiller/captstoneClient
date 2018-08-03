@@ -1,0 +1,43 @@
+<body>
+    <br>
+    <h3>Product List:</h3>
+
+  <br>
+<a routerLink="/product/create">Create a new product</a>
+  <br>
+  <br>
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+<th>Id</th>
+<th>Name</th>
+<th>Part Number</th>
+<th>Price</th>
+<th>Unit</th>
+<th>Photo Path</th>
+<th>Vendor</th>
+<th>Active</th>
+<th>Action<th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of Products">
+      <td>{{p.Id}}</td>
+      <td>{{p.Name}}</td>
+      <td>{{p.PartNumber}}</td>
+      <td>{{p.Price}}</td>
+      <td>{{p.Unit}}</td>
+      <td>{{p.PhotoPath}}</td>
+      <td>{{p.Vendor.Name}}</td>
+      <td>{{p.Active? 'Yes' : 'No' }}</td>
+      <td>
+        <a routerLink="/product/detail/{{p.Id}}">Detail</a> | 
+        <a routerLink="/product/edit/{{p.Id}}">Edit</a> | 
+        <a routerLink="/product/remove/{{p.Id}}">Remove</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body> 

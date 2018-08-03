@@ -1,0 +1,43 @@
+<body>
+    <br>
+    <h3>Purchase Request List:</h3>
+
+  <br>
+<a routerLink="/pr/create">Create a new purchase request</a>
+  <br>
+  <br>
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+<th>Id</th>
+<th>Requester</th>
+<th>Request Description</th>
+<th>Request Justification</th>
+<th>Total</th>
+<th>Status</th>
+<th>Delivery Mode</th>
+<th>Active</th>
+<th>Action<th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of Prs">
+      <td>{{p.Id}}</td>
+      <td>{{p.User.Username}}</td>
+      <td>{{p.RequestDescription}}</td>
+      <td>{{p.RequestJustification}}</td>
+      <td>{{p.Total | currency}}</td>
+      <td>{{p.Status}}</td>
+      <td>{{p.DeliveryMode}}</td>
+      <td>{{p.Active? 'Yes' : 'No' }}</td>
+      <td>
+        <a routerLink="/pr/detail/{{p.Id}}">Detail</a> | 
+        <a routerLink="/pr/edit/{{p.Id}}">Edit</a> | 
+        <a routerLink="/pr/lines/{{p.Id}}">Line items</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body> 

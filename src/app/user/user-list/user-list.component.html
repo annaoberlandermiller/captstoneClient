@@ -1,0 +1,41 @@
+<body>
+    <br>
+    <h3>User List:</h3>
+
+  <br>
+<a routerLink="/user/create">Create a new user</a>
+  <br>
+  <br>
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+<th>Id</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Reviewer</th>
+<th>Admin</th>
+<th>Active</th>
+<th>Action<th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let u of Users">
+      <td>{{u.Id}}</td>
+      <td>{{u.FirstName}} {{u.LastName}}</td>
+      <td>{{u.Phone}}</td>
+      <td>{{u.Email}}</td>
+      <td>{{u.Reviewer? 'Yes' : 'No' }}</td>
+      <td>{{u.Admin? 'Yes' : 'No' }}</td>
+      <td>{{u.Active? 'Yes' : 'No' }}</td>
+      <td>
+        <a routerLink="/user/detail/{{u.Id}}">Detail</a> | 
+        <a routerLink="/user/edit/{{u.Id}}">Edit</a> | 
+        <a routerLink="/user/remove/{{u.Id}}">Remove</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body> 

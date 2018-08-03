@@ -1,0 +1,113 @@
+<body> 
+
+        <br>
+        <h3>Edit User:</h3>
+        <br>
+        <a routerLink="/user/list">Return to User List</a> |
+         <a routerLink="/user/detail/{{user.Id}}">View {{user.Username}}'s Detail Page</a> |
+          <a routerLink="/user/remove/{{user.Id}}">Remove {{user.Username}}</a>
+        <br>
+        <br>
+        <table>
+            <tr class="form-group">
+                <th>First name:</th>
+                <td>
+                  <input type="text"
+                  id="FirstName" 
+                  [(ngModel)]="user.FirstName" 
+                  placeholder="First name here"
+                  class="form-control">
+                </td>
+              </tr>
+          <tr class="form-group">
+            <th>Last name:</th>
+            <td>
+              <input type="text" 
+              id="LastName"
+              [(ngModel)]="user.LastName"
+              placeholder="Last name here"
+              class="form-control">
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Username:</th>
+            <td>
+              <input type="text" 
+              id="Username"
+              [(ngModel)]="user.Username"
+              placeholder="Username here"
+              class="form-control">
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Password:</th>
+            <td>
+              <input type="text" 
+              id="Password"
+              [(ngModel)]="user.Password" 
+              placeholder="Password here"
+              class="form-control">
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Phone:</th>
+            <td>
+              <input type="text" 
+              id="Phone"
+              [(ngModel)]="user.Phone"
+              placeholder="Phone here"
+              class="form-control">
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Email:</th>
+            <td>
+              <input type="email" 
+              id="Email"
+              [(ngModel)]="user.Email" 
+              placeholder="Email here"
+              class="form-control">
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Reviewer:</th>
+            <td>
+              <select id="Reviewer"
+              [(ngModel)]="user.Reviewer"
+              class="form-control"
+              required>
+              <option [value]="true">Yes</option>
+              <option [value]="false">No</option>
+            </select>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Admin:</th>
+            <td>
+              <select id="Admin"
+              [(ngModel)]="user.Admin"
+              class="form-control"
+              required>
+              <option [value]="true">Yes</option>
+              <option [value]="false">No</option>
+            </select>
+            </td>
+          </tr>
+          <tr class="form-group">
+            <th>Active:</th>
+            <td>
+            <select id="Active"
+              [(ngModel)]="user.Active"
+              class="form-control"
+              required>
+              <option [value]="true">Yes</option>
+              <option [value]="false">No</option>
+            </select>
+            </td>
+          </tr>
+        </table>
+        <br>
+       <span>
+        <button class="btn btn-primary" (click)="change()">Submit changes to {{user.Username}}</button>
+    </span>
+        </body>

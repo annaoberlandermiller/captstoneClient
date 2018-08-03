@@ -1,0 +1,50 @@
+<body>
+    <br>
+    <h3>Vendor List:</h3>
+
+  <br>
+<a routerLink="/vendor/create"> Create a New Vendor</a>
+  <br>
+  <br>
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+<th>Id</th>
+<th>Code</th>
+<th>Name</th>
+<th>Address</th>
+<th>City</th>
+<th>State</th>
+<th>Zip Code</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Preapproved</th>
+<th>Active</th>
+<th>Action<th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let v of Vendors">
+      <td>{{v.Id}}</td>
+      <td>{{v.Code}}</td>
+      <td>{{v.Name}}</td>
+      <td>{{v.Address}}</td>
+      <td>{{v.City}}</td>
+      <td>{{v.State}}</td>
+      <td>{{v.Zip}}</td>
+      <td>{{v.Phone}}</td>
+      <td>{{v.Email}}</td>
+      <td>{{v.Preapproved? 'Yes' : 'No' }}</td>
+      <td>{{v.Active? 'Yes' : 'No' }}</td>
+      <td>
+        <a routerLink="/vendor/detail/{{v.Id}}">Detail</a> | 
+        <a routerLink="/vendor/edit/{{v.Id}}">Edit</a> |
+        <a routerLink="/vendor/remove/{{v.Id}}">Remove</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body> 
+

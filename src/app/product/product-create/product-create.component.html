@@ -1,0 +1,96 @@
+<body *ngIf="Product">   
+
+    <br>
+    <h3>Create a New Product:</h3>
+    <br>
+    <a routerLink="/product/list">Return to Product List</a>
+    <br>
+    <br>
+    <div>
+    <table>
+      <tr class="form-group">
+        <th>Name:</th>
+        <td>
+          <input type="text" 
+          id="Name"
+          [(ngModel)]="Product.Name"
+          placeholder="Name here"
+          class="form-control">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+          <th>Part Number:</th>
+          <td>
+            <input type="text" 
+            id="PartNumber"
+            [(ngModel)]="Product.PartNumber"
+            placeholder="Part number here"
+            class="form-control">
+          </td>
+        </tr>
+     
+      <tr class="form-group">
+        <th>Price:</th>
+        <td>
+          <input type="text" 
+          id="Price"
+          [(ngModel)]="Product.Price" 
+          placeholder="Price here"
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+        <th>Unit:</th>
+        <td>
+          <input type="text" 
+          id="Unit"
+          [(ngModel)]="Product.Unit"
+          placeholder="Unit here"
+          class="form-control">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+        <th>Photo Path:</th>
+        <td>
+          <input type="text" 
+          id="PhotoPath"
+          [(ngModel)]="Product.PhotoPath" 
+          placeholder="Photo path here"
+          class="form-control">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+          <th>Vendor:</th>
+          <td>
+             <select id="VendorId"
+              [(ngModel)]="Product.VendorId"
+              class="form-control"
+              required>
+              <option *ngFor="let v of Vendors" [ngValue]="v.Id">{{v.Name}}</option>
+            </select>
+          </td>
+        </tr>
+   
+      <tr class="form-group">
+        <th>Active:</th>
+        <td>
+        <select id="Active"
+          [(ngModel)]="Product.Active"
+          class="form-control"
+          required>
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+        </td>
+      </tr>
+    </table>
+    </div>
+    <br>
+    <span>
+    <button class="btn btn-primary" (click)="create()">Create new product</button>
+    </span>
+    </body>
+    

@@ -1,0 +1,93 @@
+<body *ngIf="Product">   
+
+    <br>
+    <h3>Create a New Product:</h3>
+    <br>
+    <a routerLink="/product/list">Return to Product List</a> | 
+    <a routerLink="/product/detail/{{Product.Id}}">View {{Product.Name}}'s Detail Page</a> | 
+    <a routerLink="/product/remove/{{Product.Id}}">Remove {{Product.Name}}</a>
+    <br>
+    <br>
+    <div>
+    <table>
+      <tr class="form-group">
+        <th>Name:</th>
+        <td>
+          <input type="text" 
+          id="Name"
+          [(ngModel)]="Product.Name"
+          class="form-control">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+          <th>Part Number:</th>
+          <td>
+            <input type="text" 
+            id="PartNumber"
+            [(ngModel)]="Product.PartNumber"
+            class="form-control">
+          </td>
+        </tr>
+     
+      <tr class="form-group">
+        <th>Price:</th>
+        <td>
+          <input type="text" 
+          id="Price"
+          [(ngModel)]="Product.Price" 
+          class="form-control">
+        </td>
+      </tr>
+      <tr class="form-group">
+        <th>Unit:</th>
+        <td>
+          <input type="text" 
+          id="Unit"
+          [(ngModel)]="Product.Unit"
+          class="form-control">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+        <th>Photo Path:</th>
+        <td>
+          <input type="text" 
+          id="PhotoPath"
+          [(ngModel)]="Product.PhotoPath" 
+          class="form-control">
+        </td>
+      </tr>
+
+        <tr class="form-group">
+            <th>Vendor:</th>
+            <td>
+               <select id="VendorId"
+                [(ngModel)]="Product.VendorId"
+                class="form-control"
+                required>
+                <option *ngFor="let v of Vendors" [ngValue]="v.Id">{{v.Name}}</option>
+              </select>
+            </td>
+          </tr>
+   
+      <tr class="form-group">
+        <th>Active:</th>
+        <td>
+        <select id="Active"
+          [(ngModel)]="Product.Active"
+          class="form-control"
+          required>
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+        </td>
+      </tr>
+    </table>
+    </div>
+    <br>
+    <span>
+    <button class="btn btn-primary" (click)="change()">Submit changes to {{Product.Name}}</button>
+    </span>
+    </body>
+    

@@ -1,0 +1,73 @@
+<div *ngIf="vendor">
+    <br>
+    <h3 >Details for vendor {{vendor.Name}}</h3>
+    <br>
+        <a routerLink="/vendor/list">Return to Vendor List</a> | 
+        <a routerLink="/vendor/detail/{{vendor.Id}}">View {{vendor.Name}}'s Detail Page</a> | 
+        <a routerLink="/vendor/edit/{{vendor.Id}}">Edit {{vendor.Name}}'s Information</a>
+        
+    <br>
+    <br>
+    
+    <table class="form-group" *ngIf="vendor">  <!--this says don't render the table until you get the data back -->
+      
+      <tr>
+        <th>Id:</th>
+        <td>{{vendor.Id}}</td>
+      </tr>
+    
+      <tr>
+          <th>Code:</th>
+          <td>{{vendor.Code}}</td>
+      </tr>
+   
+      <tr>
+          <th>Name:</th>
+          <td>{{vendor.Name}}</td>
+        </tr>
+
+        <tr>
+            <th>Address:</th>
+            <td>{{vendor.Address}}</td>
+        </tr>
+
+        <tr>
+            <th>City:</th>
+            <td>{{vendor.City}}</td>
+        </tr>
+
+        <tr>
+            <th>State:</th>
+            <td>{{vendor.State}}</td>
+        </tr>
+
+        <tr>
+            <th>Zip Code:</th>
+            <td>{{vendor.Zip}}</td>
+        </tr>
+
+        <tr>
+            <th>Phone:</th>
+            <td>{{vendor.Phone}}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{vendor.Email}}</td>
+      </tr>
+      <tr>
+        <th>Preapproved:</th>
+        <td>{{vendor.Preapproved? 'Yes' : 'No'}}</td>
+    </tr>
+    <tr>
+      <th>Active:</th>
+      <td>{{vendor.Active? 'Yes' : 'No'}}</td>
+    </tr>
+        
+      
+    </table>
+    <br>
+    <span>
+      <button class="btn btn-danger" (click)="remove()">Remove {{vendor.Name}}</button>
+    </span>
+    
+    </div>

@@ -1,7 +1,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
+    "paths": {
+      "@home/*": ["app/home/*"],
+      "@about/*": ["app/about/*"],
+      "@user/*": ["app/user/*"],
+      "@vendor/*": ["app/vendor/*"],
+      "@product/*": ["app/product/*"],
+      "@pr/*": ["app/pr/*"],  //name purchase request folder pr
+      "@prli/*": ["app/prli/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

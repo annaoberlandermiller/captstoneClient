@@ -1,0 +1,5 @@
+<nav class="navbar navbar-nav bg-dark">
+  <ul class="nav">
+    <li *ngFor="let place of menudata" class="nav-item display"><a routerLink={{place.link}}>{{place.display}}</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,76 @@
+<body *ngIf="PR">   
+
+    <br>
+    <h3>Create a New Purchase Request:</h3>
+    <br>
+    <a routerLink="/pr/list">Return to Purchase Request List</a>
+    <br>
+    <br>
+    <div>
+    <table>
+
+        <tr class="form-group">
+            <th>Requester:</th>
+            <td>
+               <select id="UserId"
+                [(ngModel)]="PR.UserId"
+                class="form-control"
+                required>
+                <option *ngFor="let u of Users" [ngValue]="u.Id">{{u.Username}}</option>
+              </select>
+            </td>
+          </tr>
+
+      <tr class="form-group">
+        <th>Request Description:</th>
+        <td>
+          <input type="textarea" 
+          id="RequestDescription"
+          [(ngModel)]="PR.RequestDescription"
+          placeholder="Request description here"
+          class="form-control">
+        </td>
+      </tr>
+
+      <tr class="form-group">
+          <th>Request Justification:</th>
+          <td>
+            <input type="textarea" 
+            id="RequestJustification"
+            [(ngModel)]="PR.RequestJustification"
+            placeholder="Request justification here"
+            class="form-control">
+          </td>
+        </tr>
+    
+        <tr class="form-group">
+            <th>Delivery Mode:</th>
+            <td>
+              <input type="text" 
+              id="DeliveryMode"
+              [(ngModel)]="PR.DeliveryMode" 
+              placeholder="Delivery mode here"
+              class="form-control">
+            </td>
+          </tr>
+
+      <tr class="form-group">
+        <th>Active:</th>
+        <td>
+        <select id="Active"
+          [(ngModel)]="PR.Active"
+          class="form-control"
+          required>
+          <option [value]="true">Yes</option>
+          <option [value]="false">No</option>
+        </select>
+        </td>
+      </tr>
+    </table>
+    </div>
+    <br>
+    <span>
+    <button class="btn btn-primary" (click)="create()">Create new purchase request</button>
+    </span>
+    </body>
+    

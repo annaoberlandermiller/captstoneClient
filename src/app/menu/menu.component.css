@@ -1,0 +1,15 @@
+nav {
+    width: 100%;
+    position: absolute;
+}
+
+ul {
+    
+    text-align: center;
+   
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+}

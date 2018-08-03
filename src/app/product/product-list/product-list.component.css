@@ -1,0 +1,9 @@
+table {
+    margin: 0px auto;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

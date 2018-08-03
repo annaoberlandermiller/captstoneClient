@@ -1,0 +1,57 @@
+
+<div *ngIf="Product">
+  <br>
+  <h3 >Details for {{Product.Name}}</h3>
+  <br>
+      <a routerLink="/product/list">Return to Product List</a> |
+       <a routerLink="/product/edit/{{Product.Id}}">Edit {{Product.Name}}'s Information</a> | 
+       <a routerLink="/product/remove/{{Product.Id}}">Remove {{Product.Name}}</a>
+  <br>
+  <br>
+  
+  <table class="form-group" *ngIf="Product">  <!--this says don't render the table until you get the data back -->
+    
+    <tr>
+      <th>Id:</th>
+      <td>{{Product.Id}}</td>
+    </tr>
+  
+    <tr>
+        <th>Vendor:</th>
+        <td>{{Product.VendorId}}</td>
+    </tr>
+ 
+    <tr>
+        <th>Name:</th>
+        <td>{{Product.Name}}</td>
+      </tr>
+
+      <tr>
+          <th>Part Number:</th>
+          <td>{{Product.PartNumber}}</td>
+      </tr>
+
+      <tr>
+          <th>Unit:</th>
+          <td>{{Product.Unit}}</td>
+      </tr>
+
+      <tr>
+          <th>Photo Path:</th>
+          <td>{{Product.PhotoPath}}</td>
+      </tr>
+
+      <tr>
+          <th>Price:</th>
+          <td>{{Product.Price}}</td>
+      </tr>
+  <tr>
+    <th>Active:</th>
+    <td>{{Product.Active? 'Yes' : 'No'}}</td>
+  </tr>
+      
+    
+  </table>
+  <br>
+  <button class="btn btn-danger" (click)="remove()">Remove {{Product.Name}}</button>
+  </div>
