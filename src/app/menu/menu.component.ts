@@ -17,7 +17,8 @@ menudata = [
   {link: '/vendor/list', display: 'Vendors'},
   {link: '/product/list', display: 'Products'},
   {link: '/pr/list', display: 'Purchase Requests'},
-  {link: '/pr/review', display: 'Review'}   //update the link to pr-review
+  {link: '/pr/review', display: 'Review'}, 
+  {link: '/user/login', display: 'Sign Out'} 
 ];
 
   ngOnInit() {

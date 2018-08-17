@@ -46,6 +46,7 @@ import { PrService } from '@pr/pr.service';
 import { PrliService } from '@prli/prli.service';
 import { PrReviewComponent } from './pr/pr-review/pr-review.component';
 import { PrReviewDetailComponent } from './pr/pr-review-detail/pr-review-detail.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 
 
@@ -86,7 +87,8 @@ import { PrReviewDetailComponent } from './pr/pr-review-detail/pr-review-detail.
     PrliEditComponent,
     PrliRemoveComponent,
     PrReviewComponent,
-    PrReviewDetailComponent
+    PrReviewDetailComponent,
+    UserLoginComponent
   
   ],
   imports: [

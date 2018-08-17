@@ -12,7 +12,7 @@ const url = 'http://localhost:49231/Users';
 
 
 export class UserService {
-Users: User[];
+
 
 List(): Observable<JsonResponse> {
   return this.http.get(url+"/List") as Observable<JsonResponse>;
@@ -32,6 +32,10 @@ Change(user:User): Observable<JsonResponse> {
 
 Remove(user:User): Observable<JsonResponse> {
   return this.http.post(url+"/Remove", user) as Observable<JsonResponse>;
+}
+
+getUser(Username: string, Password: string): Observable<JsonResponse> {
+  return this.http.get(url+ "/Login/" + Username + "/"+ Password) as Observable<JsonResponse>;
 }
 
   constructor(private http: HttpClient) { }  

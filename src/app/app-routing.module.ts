@@ -46,7 +46,8 @@ const routes: Routes = [
   { path: 'user/edit/:id', component: UserEditComponent},
   { path: 'user/create', component: UserCreateComponent},
   { path: 'user/remove/:id', component: UserRemoveComponent},
-  { path: 'user/login', component: UserLoginComponent},
+  { path: 'user/login/:id', component: UserLoginComponent},
+ 
 
   { path: 'vendor/list', component: VendorListComponent},
   { path: 'vendor/detail/:id', component: VendorDetailComponent},  
@@ -73,7 +74,7 @@ const routes: Routes = [
   { path: 'prli/create/:id', component: PrliCreateComponent},
   { path: 'prli/remove/:id', component: PrliRemoveComponent},
 
-  { path: '**', component: HomeComponent}
+  { path: '**', component: UserLoginComponent}
 ];
 
 @NgModule({
